@@ -3,15 +3,11 @@ import java.util.Scanner;
 public class homework2 {
     public static void main(String[] args) {
 //Дано произвольное число. Необходимо узнать, сколько в конце числа нулей.
-        int number = 1002000;
-        String numberStr = Integer.toString(number);
+        int number = 10020000;
         int count = 0;
-        for (int i = numberStr.length() - 1; i >= 0; i--) {
-            if (numberStr.charAt(i) == '0') {
-                count++;
-            } else {
-                break;
-            }
+        while (number % 10 == 0 && number != 0) {
+            count++;
+            number /= 10;
         }
         System.out.println(count);
 
